@@ -9,6 +9,7 @@ import {
   Text,
   View,
 } from "react-native";
+import Day from "./Day";
 
 const { height: SCREEN_HEIGHT, width: SCREEN_WIDTH } = Dimensions.get("window");
 
@@ -72,7 +73,7 @@ export default function App() {
           days.map((day, index) => (
             <View key={index} style={styles.day}>
               <Text style={styles.date}>
-                {new Date(day.dt * 1000).toString().substring(0, 10)}
+                <Day dayMs={day.dt}></Day>
               </Text>
               <View style={styles.tempCnt}>
                 <Text style={styles.temp}>
